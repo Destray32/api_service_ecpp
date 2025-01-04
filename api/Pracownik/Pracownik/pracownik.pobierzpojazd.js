@@ -1,4 +1,4 @@
-const db = require('F:\\folder-projekty\\praca-mati\\ecpp-projekt\\server\server.js');
+const db = require('F:\\folder-projekty\\praca-mati\\ecpp-projekt\\server.js');
 
 function PobierzPracownicyPojazd(req, res) {
     const query = `SELECT idPojazdy, Nr_rejestracyjny FROM pojazdy WHERE Archiwum = 0;`;

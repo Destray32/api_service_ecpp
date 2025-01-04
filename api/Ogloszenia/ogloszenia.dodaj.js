@@ -1,4 +1,4 @@
-const db = require('F:\\folder-projekty\\praca-mati\\ecpp-projekt\\server\server.js');
+const db = require('F:\\folder-projekty\\praca-mati\\ecpp-projekt\\server.js');
 
 function DodajOgloszenie(req, res) {
     const { tytul, tresc, grupa, osoby } = req.body;

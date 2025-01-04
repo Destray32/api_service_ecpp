@@ -1,4 +1,4 @@
-const db = require('F:\\folder-projekty\\praca-mati\\ecpp-projekt\\server\server.js');
+const db = require('F:\\folder-projekty\\praca-mati\\ecpp-projekt\\server.js');
 
 function PobierzPracownicyGrupy(req, res) {
     const query = `SELECT idGrupa_urlopowa, Zleceniodawca FROM grupa_urlopowa WHERE Archiwum = 0;`;

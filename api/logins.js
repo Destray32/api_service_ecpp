@@ -1,4 +1,4 @@
-const db = require('F:\\folder-projekty\\praca-mati\\ecpp-projekt\\server\server.js');
+const db = require('F:\\folder-projekty\\praca-mati\\ecpp-projekt\\server.js');
 
 function Logins(req, res) {
     const query = `SELECT Nazwa_uzytkownika from pracownik WHERE Archiwum = 0`;
