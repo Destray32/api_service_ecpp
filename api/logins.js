@@ -1,4 +1,4 @@
-const db = require('../../server');
+const db = require('../server');
 
 function Logins(req, res) {
     const query = `SELECT Nazwa_uzytkownika from pracownik WHERE Archiwum = 0`;

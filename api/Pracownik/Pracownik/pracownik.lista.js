@@ -1,4 +1,4 @@
-const db = require('../../../server');
+const db = require('../../server');
 
 function ListaPracownikow(req, res) {
     const query = `
