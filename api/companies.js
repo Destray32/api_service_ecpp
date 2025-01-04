@@ -1,4 +1,4 @@
-const db = require('../server');
+const db = require('F:\folder-projekty\praca-mati\ecpp-projekt\server\server.js');;
 
 function Companies (req, res) {
     const query = `SELECT Nazwa_firmy from firma WHERE Archiwum = 0`;

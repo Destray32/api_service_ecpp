@@ -1,4 +1,4 @@
-const db = require('../server');
+const db = require('F:\folder-projekty\praca-mati\ecpp-projekt\server\server.js');;
 const jwt = require('jsonwebtoken');
 
 async function GetBadgeCount(req, res) {

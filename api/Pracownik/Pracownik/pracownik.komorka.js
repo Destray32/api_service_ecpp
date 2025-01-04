@@ -1,4 +1,4 @@
-const db = require('../../server');
+const db = require('F:\folder-projekty\praca-mati\ecpp-projekt\server\server.js');;
 
 function KomorkaPracownika(req, res) {
     const { id } = req.params;
