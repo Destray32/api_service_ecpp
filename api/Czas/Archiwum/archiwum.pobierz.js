@@ -1,4 +1,4 @@
-const db = require('F:\folder-projekty\praca-mati\ecpp-projekt\server\server.js');;
+const db = require('F:\\folder-projekty\\praca-mati\\ecpp-projekt\\server\server.js');
 
 function PobierzArchiwum(req, res) {
     const selectedOption = req.params.selectedOption;
