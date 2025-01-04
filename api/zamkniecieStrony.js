@@ -1,4 +1,4 @@
-const db = require('F:\\folder-projekty\\praca-mati\\ecpp-projekt\\server.js');
+const db = require('../server.js');
 const jwt = require('jsonwebtoken');
 
 function ZamkniecieStrony(req, res) {

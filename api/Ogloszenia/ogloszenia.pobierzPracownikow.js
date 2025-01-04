@@ -1,4 +1,4 @@
-const db = require('F:\\folder-projekty\\praca-mati\\ecpp-projekt\\server.js');
+const db = require('../../server.js');
 
 function PobierzOgloszeniaPracownicy(req, res) {
     const query = `SELECT p.idPracownik, d.Imie, d.Nazwisko FROM pracownik p JOIN dane_osobowe d ON p.FK_Dane_osobowe = d.idDane_osobowe WHERE p.Archiwum = 0;`;
