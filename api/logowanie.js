@@ -41,7 +41,7 @@ async function Logowanie(req, res) {
         res.cookie('token', token, {
             httpOnly: true,
             //secure: process.env.NODE_ENV === 'production',  // zmienic jak bedziemy oddawac apke
-            secure: false,
+            secure: true,
             sameSite: 'None',
             maxAge: 3600000,
         });
