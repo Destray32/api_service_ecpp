@@ -66,9 +66,9 @@ const NODE_ENV = process.env.NODE_ENV;
 //
 // https://sidorares.github.io/node-mysql2/docs#using-connection-pools
 const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '',
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
     database: 'mydb',
     waitForConnections: true,
     connectionLimit: 30,
