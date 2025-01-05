@@ -42,7 +42,7 @@ async function Logowanie(req, res) {
             httpOnly: true,
             //secure: process.env.NODE_ENV === 'production',  // zmienic jak bedziemy oddawac apke
             secure: false,
-            sameSite: 'strict',
+            sameSite: 'None',
             maxAge: 3600000,
         });
 
