@@ -45,21 +45,18 @@ function formatTime(time) {
 }
 
 // funkcja pomocnicza, która konwertuje nazwy dni tygodnia na daty
-function getDateFromDayName(dayName, weekNumber, year) {
+const getDateFromDayName = (dayName, weekNumber, year) => {
     const dayNames = ['niedziela', 'poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek', 'sobota'];
     const targetDayIndex = dayNames.indexOf(dayName.toLowerCase());
 
-    // Find first Monday of the year
-    let date = new Date(year, 0, 1);
-    while (date.getDay() !== 1) {
-        date.setDate(date.getDate() + 1);
-    }
-
-    // Jump to the correct week & day
+    // uzyskanie pierwszego dnia tygodnia w danym roku
+    const firstDayOfYear = new Date(year, 0, 1);
     const daysOffset = (weekNumber - 1) * 7;
-    date.setDate(date.getDate() + daysOffset + targetDayIndex);
+    const weekStartDate = new Date(firstDayOfYear.setDate(firstDayOfYear.getDate() + daysOffset - firstDayOfYear.getDay() + 1));
 
-    return date.toISOString().split('T')[0];
-}
+    // uzyskanie konkretnego dnia tygodnia
+    const specificDay = new Date(weekStartDate.setDate(weekStartDate.getDate() + targetDayIndex));
+    return specificDay.toISOString().split('T')[0]; // zwraca datę w formacie yyyy-MM-dd
+};
 
 module.exports = PobierzCzasPracy;
