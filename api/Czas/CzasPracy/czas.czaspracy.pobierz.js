@@ -45,24 +45,20 @@ function formatTime(time) {
     return `${hours}:${minutes}`;
 }
 
-// funkcja pomocnicza, która konwertuje nazwy dni tygodnia na daty
 const getDateFromDayName = (dayName, weekNumber, year) => {
     const dayNames = ['niedziela', 'poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek', 'sobota'];
     const targetDayIndex = dayNames.indexOf(dayName.toLowerCase());
-
-    // uzyskanie pierwszego dnia tygodnia w danym roku
-    const firstDayOfYear = new Date(year, 0, 1);
+    
+    // Calculate week start date once
+    const firstDayOfYear = new Date(Date.UTC(year, 0, 1));
     const daysOffset = (weekNumber - 1) * 7;
-    const weekStartDate = new Date(firstDayOfYear.setDate(firstDayOfYear.getDate() + daysOffset - firstDayOfYear.getDay() + 1));
-
-    // uzyskanie konkretnego dnia tygodnia
-    const specificDay = new Date(weekStartDate.setDate(weekStartDate.getDate() + targetDayIndex));
-
-    console.log('Target day index:', targetDayIndex);
-    console.log('Week start date:', weekStartDate);
-    console.log('Specific day:', specificDay);
-
-    return specificDay.toISOString().split('T')[0]; // zwraca datę w formacie yyyy-MM-dd
+    const weekStartDate = new Date(Date.UTC(year, 0, 1 + daysOffset - firstDayOfYear.getUTCDay() + 1));
+    
+    // Add target day offset without creating new Date object
+    const specificDay = new Date(weekStartDate);
+    specificDay.setUTCDate(weekStartDate.getUTCDate() + targetDayIndex);
+    
+    return specificDay.toISOString().split('T')[0];
 };
 
 module.exports = PobierzCzasPracy;
