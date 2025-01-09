@@ -18,6 +18,7 @@ function PobierzCzasPracy(req, res, db) {
                            WHERE Tydzien.tydzienRoku = ? AND Tydzien.Rok = ? AND Tydzien.Pracownik_idPracownik = ?`;
 
         db.query(timeQuery, [weekData, year, pracownikId], (err, timeResults) => {
+            console.log('Raw query results:', timeResults);
             if (err) {
                 return res.status(500).json({ message: 'Błąd podczas pobierania godzin pracy' });
             }
@@ -56,6 +57,11 @@ const getDateFromDayName = (dayName, weekNumber, year) => {
 
     // uzyskanie konkretnego dnia tygodnia
     const specificDay = new Date(weekStartDate.setDate(weekStartDate.getDate() + targetDayIndex));
+
+    console.log('Target day index:', targetDayIndex);
+    console.log('Week start date:', weekStartDate);
+    console.log('Specific day:', specificDay);
+
     return specificDay.toISOString().split('T')[0]; // zwraca datę w formacie yyyy-MM-dd
 };
 
