@@ -1,4 +1,4 @@
-const db = require('../../server.js');
+const db = require('../../server');
 const jwt = require('jsonwebtoken');
 
 async function GetBadgeCount(req, res) {

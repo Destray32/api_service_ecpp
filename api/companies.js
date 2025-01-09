@@ -1,4 +1,4 @@
-const db = require('../server.js');
+const db = require('../../server');
 
 function Companies (req, res) {
     const query = `SELECT Nazwa_firmy from firma WHERE Archiwum = 0`;
