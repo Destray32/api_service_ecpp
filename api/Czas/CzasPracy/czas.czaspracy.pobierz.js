@@ -46,7 +46,7 @@ function formatTime(time) {
 }
 
 const getDateFromDayName = (dayName, weekNumber, year) => {
-    const dayNames = ['niedziela', 'poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek', 'sobota'];
+    const dayNames = ['poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek', 'sobota', 'niedziela'];
     const targetDayIndex = dayNames.indexOf(dayName.toLowerCase());
     
     // Calculate week start date once
